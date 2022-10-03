@@ -10,27 +10,24 @@ node {
 
    stage('Environment') {
        
-      // build job: 'Enviro-Check'
+       // build job: 'Enviro-Check'
        
    }
 
    stage('Document') {
    
-	//build job: 'GitHub Actions Maven Build Example', parameters: [booleanParam(name: 'generate_javadoc', value: false), stringParam(name: 'javadoc_location', value: 'C:\\_javadoc00')]
-	
+	  //build job: 'Generate-JavaDoc', parameters: [booleanParam(name: 'generate_javadoc', value: false), stringParam(name: 'javadoc_location', value: 'C:\\_javadoc00')]
+
    }
 
    stage('Compile'){
-	   
-	       		sh 'mvn -B package --file pom.xml'
-          		sh 'mkdir staging && cp target/*.jar staging'
-   
-      // build job: 'Compile-RPS'
+  
+       // build job: 'Compile-RPS'
    }
    
    stage('Acceptance') {
        
-       def response = input message: 'UAT Tests',   parameters: [choice(choices: 'Pass\nFail', description: 'Proceed or Abort?', name: 'Pass or Fail?')]
+         //def response = input message: 'UAT Tests',   parameters: [choice(choices: 'Pass\nFail', description: 'Proceed or Abort?', name: 'Pass or Fail?')]
 
    }
    
