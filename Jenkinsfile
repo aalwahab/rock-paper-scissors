@@ -4,13 +4,13 @@ node {
 
    stage('Version') { 
 
-	  build job: 'Version Check'
+	  //build job: 'Version Check'
           
    }
 
    stage('Environment') {
        
-       build job: 'Enviro-Check'
+      // build job: 'Enviro-Check'
        
    }
 
