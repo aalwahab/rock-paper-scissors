@@ -16,7 +16,7 @@ node {
 
    stage('Document') {
    
-	build job: 'main', parameters: [booleanParam(name: 'generate_javadoc', value: false), stringParam(name: 'javadoc_location', value: 'C:\\_javadoc00')]
+	build job: 'GitHub Actions Maven Build Example', parameters: [booleanParam(name: 'generate_javadoc', value: false), stringParam(name: 'javadoc_location', value: 'C:\\_javadoc00')]
 
    }
 
