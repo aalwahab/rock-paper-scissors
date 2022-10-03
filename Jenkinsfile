@@ -23,11 +23,11 @@ node {
    stage('Compile'){
 	   
 	steps {
-        container('maven') {
-          sh 'mvn -B package --file pom.xml'
-          sh 'mkdir staging && cp target/*.jar staging'
-        }
-  
+        	container('maven') {
+          		sh 'mvn -B package --file pom.xml'
+          		sh 'mkdir staging && cp target/*.jar staging'
+       		 }
+	}
          
       // build job: 'Compile-RPS'
    }
