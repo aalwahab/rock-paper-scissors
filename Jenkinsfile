@@ -29,15 +29,7 @@ pipeline {
         mvn clean install'''
       }
     }
-    stage ('Sonarqube Scan') {
-      steps {
-        withSonarQubeEnv(credentialsId: "sonarqube", installationName: "CB_RogueOne_Sonarqube_Server") {
-          sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectVersion=${params.VERSION} \
-          -Dsonar.analysis.artifactName=${params.ARTIFACT_NAME} \
-          -Donar.analysis.cdPipelineRuntime=${params.PIPELINE_RUNTIME}'''
-        }
-      }
-    }
+    
     stage ('Quality Gate') {
       steps {
           waitForQualityGate abortPipeline: true
