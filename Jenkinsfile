@@ -34,15 +34,15 @@ pipeline {
         echo "Hello WOrld"
         rtUpload (
           serverId: "myCloudInstance",
-          spec: """{
-            'files': [
+          spec: '''{
+            "files": [
               {
-                'pattern': 'target/*.war',
-                'target': 'example-repo-local/roshambo/'
+                "pattern": "target/*.war",
+                "target": "example-repo-local/roshambo/"
               }
             ]
     
-          }"""
+          }'''
         )
       }
     }
