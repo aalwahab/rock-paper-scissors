@@ -1,6 +1,8 @@
 pipeline {
   agent any
-  
+  tools { 
+    maven 'myMaven' 
+  }
   parameters {
     string(name: "ARTIFACT_NAME", defaultValue: "roshambo-0.0.0.war")
     string(name: "PIPELINE_RUNTIME", defaultValue: "")
