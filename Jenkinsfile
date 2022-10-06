@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label "ci-agent"
+    label any
   }
   environment {
     SCANNER_HOME = tool "sonarScanner"
