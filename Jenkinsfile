@@ -21,9 +21,9 @@ pipeline {
     }
     stage ('Build') {
       steps {
-        sh '''
+        sh """
         mvn versions:set -DnewVersion=${params.VERSION}-${params.ENV}-${params.GIT_SHA}
-        mvn clean install'''
+        mvn clean install """
       }
     }
     
