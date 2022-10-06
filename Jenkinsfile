@@ -32,19 +32,19 @@ pipeline {
    stage ('Deploy to Artifactory') {
       steps {
         echo "Hello WOrld"
-    //    rtUpload (
-    //      serverId: "CB_RogueOne_Artifactory_Server",
-    //      spec: """{
-    //        'files': [
-    //          {
-    //            'pattern': 'target/*.war',
-    //            'target': 'cloudbeesRogueone/roshambo/'
-    //          }
-    //        ]
+        rtUpload (
+          serverId: "myCloudInstance",
+          spec: """{
+            'files': [
+              {
+                'pattern': 'target/*.war',
+                'target': 'example-repo-local/roshambo/'
+              }
+            ]
     
-      //    }"""
-     //   )
-     // }
+          }"""
+        )
+      }
     }
   }
   }
